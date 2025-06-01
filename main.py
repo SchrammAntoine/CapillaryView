@@ -137,7 +137,7 @@ def main():
     home_dir = Path.home()
     app = QApplication(sys.argv)
     window = MyWidget(
-        data_dir = home_dir
+        data_dir = str(home_dir)
     )
     window.show()
     sys.exit(app.exec_())
