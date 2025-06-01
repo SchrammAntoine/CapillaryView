@@ -134,9 +134,10 @@ class MyWidget(QWidget):
 
 
 def main():
+    home_dir = Path.home()
     app = QApplication(sys.argv)
     window = MyWidget(
-        data_dir = "/home/administrateur/Documents/LabBook/schramm/Documents/TDP43-STMN2/LabBook/SHAPE/raw"
+        data_dir = home_dir
     )
     window.show()
     sys.exit(app.exec_())
