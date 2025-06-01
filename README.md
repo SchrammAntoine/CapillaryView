@@ -35,3 +35,18 @@ Sequencing data are usually composed of 4 distinct fluorescence intensity array,
 This is not a processing unit properly speaking. Instead, the processing tools included here are made for enhancing data vizualization performances. To this date, two parameters are proposed :
 * region of interest : used to get focus on a region of interest across various files. This prevent the plot to unzoom back to full view upon loading a new data serie.
 * median scaling : usefull for comparing two series that scale fluorescence intensities differently.
+
+# Changing the default root directory
+
+by default the root directory is the home directory. To change it, go in `main.py`  and modify the following :
+
+```python
+def main():
+    home_dir = Path.home() # change this line to the path you want
+    app = QApplication(sys.argv)
+    window = MyWidget(
+        data_dir = str(home_dir)
+    )
+    window.show()
+    sys.exit(app.exec_())
+```
